@@ -1,0 +1,142 @@
+.topSlidercontainer {
+    height: auto;
+    // background: #0e1028;
+    width: 100%;
+}
+
+.topSlider {
+    height: auto;
+    background: #0e1028;
+
+    .sliderarea {
+        background: #0e1028;
+        height: 500px;
+    }
+}
+
+.cardBody {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5% 5% 5% 10%;
+
+    li {
+        list-style: none;
+    }
+    li::before {
+        content: "\2022";
+        color: #1d4779;
+      }
+    .index {
+        font-size: 40px;
+        font-weight: 600;
+        color:#1e222f;
+        .title{
+            font-weight: 400;
+            font-size: 30px;
+            color: white;
+            margin-left: 15px;
+        }
+    }
+
+    .text {
+        font-size: 18px;
+        width: 80%;
+        margin-top: 15%;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    .cardButton {
+        background: transparent;
+        color: white;
+        border: 1px solid white;
+        margin-top: 6%;
+        padding: 3%;
+        font-size: 14px;
+    }
+}
+
+.arrowbuttons {
+    float: right;
+    margin-top: 10%;
+    margin-right: 20%;
+    .button {
+        border: none;
+        padding: 5px;
+        background-color: white;
+        width: 40px;
+        margin-right: 10px;
+
+    }
+    button:focus { outline: none; }
+}
+
+.containerTitle {
+    color: white;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 6%;
+    margin-left: 12%;
+    .question {
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+    .answer {
+        margin-top: 10px;
+        font-size: 30px;
+    }
+}
+
+.eventText {
+    color: #171a30;
+    font-weight: 600;
+    font-size: 35px;
+    font-style: bold;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.playbutton {
+    background-color: #2661a4;
+    color: white;
+    font-size: 90px;
+    font-style: bold;
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 18%;
+    margin-left: -7%;
+    padding: 10px 35px;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .arrowbuttons {
+        float: right;
+        margin-top: 5%;
+        margin-right: 10%;
+        .button {
+            border: none;
+            padding: 5px;
+            background-color: white;
+            width: 40px;
+            margin-right: 10px;
+    
+        }
+        button:focus { outline: none; }
+    }
+
+    .playbutton {
+        background-color: #2661a4;
+        color: white;
+        font-size: 90px;
+        font-style: bold;
+        float: left;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 30%;
+        margin-left: -15%;
+        padding: 10px 35px;
+        border-radius: 10px;
+    }
+}

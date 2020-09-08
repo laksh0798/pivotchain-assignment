@@ -1,0 +1,108 @@
+.suitationdashboardcontainer {
+	background-color: #151826;
+	padding-bottom: 40px;
+	.header {
+		color: white;
+		text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.suitationdashboard {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.situationcard {
+	max-width: 42%;
+	border-radius: 10px;
+	border: 1px solid rgb(53, 52, 52);
+	height: 150px;
+	margin: 1% 2%;
+	background: transparent;
+	overflow: hidden;
+}
+
+.situationcard:hover {
+	background-image: linear-gradient(to bottom, #0a6b9c, #093f5f);
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+	width: 25%;
+	font-size: 50px;
+	padding: 20px;
+	padding: auto;
+	background-color: white;
+	float: left;
+	border: 1px solid white;
+	border-radius: 20px;
+	text-align: center;
+	font-weight: 100;
+}
+
+.suitationcardtext {
+	float: right;
+	width: 50%;
+	margin: 15px;
+	margin-left: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	.title {
+		font-weight: 600;
+	}
+	.info {
+		font-weight: unset;
+		font-size: 15px;
+		margin-top: 10px;
+	}
+}
+.situationcardcontainer {
+	padding-top: 10%;
+	display: flex;
+	width: 20%;
+	margin-right: 10%;
+}
+
+@media only screen and (max-width: 1000px) {
+	.situationcardcontainer {
+		padding-top: 100px;
+		display: block;
+		margin-right: 10%;
+		margin-left: 0%;
+	}
+	.situationcard {
+		width: 50px;
+	}
+	.icon {
+		width: 50%;
+		font-size: 50px;
+		padding: 20px;
+		padding: auto;
+		background-color: white;
+		float: left;
+		border: 1px solid white;
+		border-radius: 20px;
+		text-align: center;
+		font-weight: 100;
+	}
+	.suitationcardtext {
+		float: right;
+		margin: 0px;
+		width: 40%;
+		font-family: Arial, Helvetica, sans-serif;
+		color: white;
+		.title {
+			font-weight: 600;
+		}
+		.info {
+			font-weight: unset;
+			font-size: 10px;
+			margin-top: 10px;
+		}
+	}
+}

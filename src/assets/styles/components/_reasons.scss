@@ -1,0 +1,21 @@
+.reasonscontainer {
+    background: url('../../../img/reasons.png');
+    height:700px;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 1000px) {
+    .reasonscontainer {
+        background: url('../../../img/reasons.png');
+        height:400px;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+}

@@ -1,0 +1,43 @@
+.detectSlidercontainer {
+    width: auto;
+}
+
+.detectSlider {
+    background: #11122e;
+    overflow: hidden;
+    .header {
+		color: white;
+		text-align: center;
+		font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        padding-top: 20px;
+    }
+    .detectsliderarea {
+        height: 400px;
+    }
+}
+
+.detectcardBody {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5% 5% 5% 10%;
+
+    img {
+        height: 250px;
+        width: 220px;
+        border-radius: 10px;
+    }
+}
+
+.detectarrowbuttons {
+    float: left;
+    overflow: visible;
+
+    .button {
+        border: none;
+        padding: 5px;
+        background-color: white;
+        width: 20px;
+        margin-right: 10px;
+    }
+    button:focus { outline: none; }
+}
