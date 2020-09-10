@@ -1,21 +1,119 @@
-.reasonscontainer {
-    background: url('../../../img/reasons.png');
-    height:700px;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+@mixin on-circle($item-count, $circle-size, $item-size) {
+	position: relative;
+	width: $circle-size;
+	height: $circle-size;
+	padding: 0;
+	border-radius: 50%;
+	list-style: none;
+
+	> * {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: $item-size;
+		height: $item-size;
+		margin: -($item-size / 2);
+
+		$angle: (360 / $item-count);
+		$rot: 0;
+
+		@for $i from 1 through $item-count {
+			&:nth-of-type(#{$i}) {
+				transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
+			}
+
+			$rot: $rot + $angle;
+		}
+	}
 }
 
-@media only screen and (max-width: 1000px) {
-    .reasonscontainer {
-        background: url('../../../img/reasons.png');
-        height:400px;
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-    }
+.circle-container {
+	@include on-circle($item-count: 8, $circle-size: 50em, $item-size: 6em);
+	margin: 5em auto 0;
+	border: dashed 1px white;
+	background-color: #04122a;
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	li {
+		display: block;
+		max-width: 100%;
+		text-align: center;
+		transition: .15s;
+		background-color: #04122a;
+		color: white;
+		height: 180px;
+	}
+
+	i {
+		font-size: 40px;
+	}
+
+	b {
+		font-size: 20px;
+		font-weight: 600;
+	}
+
+	p {
+		font-size: 15px;
+		margin-top: 5%;
+	}
+
+	.reason-card {
+		// width: 200px;
+	}
+}
+
+.reasonContainer {
+	background-color: #04122a;
+	width: 100%;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 600px;
+	overflow: hidden;
+}
+
+.reasonscontainerTitle {
+	background-color: #04122a;
+	color: white;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	.title {
+		font-weight: 600;
+		font-size: 35px;
+	}
+
+	.question {
+		margin-top: 10px;
+		font-size: 30px;
+	}
+}
+
+.circle {
+	background: #456bd9;
+	clip-path: circle(50%);
+	height: 35em;
+	width: 35em;
+	z-index: 9;
+	margin-top: 350px;
+	margin-left: 380px;
+	margin-right: 380px;
+    position: absolute;
+    
+}
+.half-circle {
+	z-index: 9;
+    position: absolute;
+	width: 500px;
+	height: 250px;
+	background-color: #1E203C;
+	border-top-left-radius: 250px;
+	border-top-right-radius: 250px;
+	border: 150px solid #1A1C38;
+	border-bottom: 0;
+    margin-top: 350px;
+	margin-left: 400px;
+	margin-right: 400px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }

@@ -24,14 +24,12 @@ class Deck extends Component {
         let middle_card_by_index = 0
         let new_x = 0;
         let new_y = 0;
-        let new_zIndex = 0;
-        let new_scale = 1;
         for (let i = 0; i < cardData.length; i++) {
             if (i < middle_card_by_index) {
-                new_x = center.x - (300 * (middle_card_by_index - i))
+                new_x = center.x - (350 * (middle_card_by_index - i))
                 new_y = center.y;
             } else {
-                new_x = center.x + (300 * (i - middle_card_by_index))
+                new_x = center.x + (350 * (i - middle_card_by_index))
 
                 new_y = center.y;
 
@@ -174,7 +172,7 @@ const cardData = [
 const styles = {
     deck: {
         position: "absolute",
-        left: "5%",
+        left: "10%",
         transform: "translate(-50%,-50%)",
         width: "300px"
     }

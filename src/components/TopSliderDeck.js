@@ -42,7 +42,7 @@ class Deck extends Component {
                 new_y = center.y;
                 new_x = new_x - ((200) * (i - middle_card_by_index))
 
-                new_zIndex = i * (-1.0) *10
+                new_zIndex = i * (-1.0) * 10
                 new_scale = Math.pow(0.4, (i - middle_card_by_index))
 
             }
@@ -58,6 +58,7 @@ class Deck extends Component {
                     opacity={i === middle_card_by_index ? 1 : 0.5}
                     scale={new_scale}
                     handle_next={this.handle_next}
+                    isMiddle={i === middle_card_by_index ? true : false}
                 />
 
             )
@@ -67,11 +68,15 @@ class Deck extends Component {
             cards: new_card
         })
     }
-    handle_next = (index=null) => {
-        console.log(this.deck.children)
-        if(!index){
-            if(!(Number(this.deck.children[1].id)===index)){
-                return
+    handle_next = (index = null) => {
+        if (index === "xyz") {
+            
+        }
+        else {
+            if (index !== null) {
+                if ((Number(this.deck.children[1].id) !== index)) {
+                    return
+                }
             }
         }
         if (!this.animation_in_progress) {
@@ -86,6 +91,11 @@ class Deck extends Component {
                 this.deck.children[i].style.zIndex = this.deck.children[i - 1].style.zIndex;
                 this.deck.children[i].style.transform = this.deck.children[i - 1].style.transform;
                 this.deck.children[i].style.opacity = '1';
+                this.deck.children[i].style.height = "500px";
+                this.deck.children[i].style.width = "800px";
+                this.deck.children[i].style.paddingTop = "80px";
+                this.deck.children[i].childNodes[0].childNodes[1].style.visibility = "hidden"
+
             }
 
             this.deck.children[0].style.transitionDuration = '0.1s';
@@ -95,7 +105,10 @@ class Deck extends Component {
                 this.deck.children[0].style.transitionDuration = '0.0s';
                 this.deck.children[0].style.left = last_card_left;
                 this.deck.children[0].style.zIndex = last_card_zIndex;
-
+                this.deck.children[1].style.height = "250px";
+                this.deck.children[1].style.width = "450px";
+                this.deck.children[1].style.paddingTop = "0px";
+                this.deck.children[1].childNodes[0].childNodes[1].style.visibility = "visible"
                 this.deck.appendChild(this.deck.children[0]);
 
                 setTimeout(() => {
@@ -103,7 +116,7 @@ class Deck extends Component {
                     this.deck.children[this.deck.children.length - 1].style.transform = last_card_transform;
                     this.animation_in_progress = false;
                 }, 100)
-            }, 700)
+            })
         }
         else {
             return
@@ -121,6 +134,10 @@ class Deck extends Component {
                 this.deck.children[i].style.left = this.deck.children[i + 1].style.left;
                 this.deck.children[i].style.zIndex = this.deck.children[i + 1].style.zIndex;
                 this.deck.children[i].style.transform = this.deck.children[i + 1].style.transform;
+                this.deck.children[i].style.height = "500px";
+                this.deck.children[i].style.width = "800px";
+                this.deck.children[i].style.paddingTop = "80px";
+                this.deck.children[i].childNodes[0].childNodes[1].style.visibility = "hidden"
             }
 
             this.deck.children[this.deck.children.length - 1].style.transitionDuration = '0.1s';
@@ -132,6 +149,12 @@ class Deck extends Component {
                 this.deck.children[this.deck.children.length - 1].style.zIndex = first_card_zIndex;
 
                 this.deck.insertBefore(this.deck.children[this.deck.children.length - 1], this.deck.children[0]);
+
+                this.deck.children[0].style.height = "250px";
+                this.deck.children[0].style.width = "450px";
+                this.deck.children[0].style.paddingTop = "0px";
+                this.deck.children[0].childNodes[0].childNodes[1].style.visibility = "visible"
+                this.deck.children[0].style.opacity = 1;
 
                 setTimeout(() => {
                     this.deck.children[0].style.transitionDuration = '0.2s';
@@ -158,12 +181,9 @@ class Deck extends Component {
                 <div className="eventText">
                     Events
                 </div>
-                <div className="playbutton">
-                    <i className="fa fa-caret-left" aria-hidden="true"></i>
-                </div>
                 <div className="arrowbuttons">
                     <button className="button" onClick={this.handle_previous}><i className="fa fa-arrow-left" aria-hidden="true"></i></button>
-                    <button className="button" onClick={this.handle_next}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
+                    <button className="button" onClick={() => this.handle_next("xyz")}><i className="fa fa-arrow-right" aria-hidden="true"></i></button>
                 </div>
                 <div className="sliderarea">
                     <div ref={ref_id => this.deck = ref_id} style={styles.deck}>

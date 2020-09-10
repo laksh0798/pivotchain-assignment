@@ -5,7 +5,6 @@ import Situationdashboard from './container/SituationDashboard';
 import Integration from './container/Integration';
 import Detect from './container/Detect';
 import Reasons from './container/Reasons';
-import Test from './components/test'
 function App() {
   return (
     <div className="App">
